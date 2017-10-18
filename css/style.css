@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 1200px;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: normal;
+  font-family: "PT Sans", "Cuprum", "Arial", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-search-order {
+  background-color: #293449;
+}
+
+.header-container {
+  background-color: #f3f7f9;
+}
+
+.services {
+  width: 1200px;
+  background-color: #f4f8fa;
+}
+
+
+/*
+.services-guarantee {
+  display:none;
+
+}
+.guarantee-show {
+  display:block;
+}
+/*
+.top-brands{
+  display: flex;
+  flex-wrap: wrap;
+}
+.logo-brand{
+  width: 220px;
+  height: 145px;
+  margin: 10px 10px  ;
+  display: flex;
+  border: 2px solid black;
+}
+*/
+
+.site-navigation {
+  list-style: none;
+}
+
+.main-order,
+.site-navigation,
+.footer-navigation,
+.footer-products {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-title,
+.main-contacts {
+  margin: 0;
+  padding: 0;
+}
+/*
+.catalog-item .actions{
+  display: none;
+}
+
+.modal-window-cart {
+  display:none;
+}
+
+.catalog-item:hover .actions{
+  display: block;
+}
+*/
