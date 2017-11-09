@@ -170,7 +170,8 @@ a {
   padding-right: 25px;
 }
 
-.main-cart::before {
+.main-cart::before,
+.buy::before {
   content: "";
   display: block;
   position: absolute;
@@ -182,6 +183,12 @@ a {
   background-image: url("../img/icon-cart.svg");
   opacity: 0.3;
   background-repeat: no-repeat;
+}
+
+.main-cart:hover::before,
+.buy:hover::before,
+.main-favorite:hover::before {
+  opacity: 1;
 }
 
 .main-favorite {
@@ -274,6 +281,14 @@ a {
   margin-left: 74px;
 }
 
+.user-login a:hover {
+  color: #ee3643;
+}
+
+.user-login a:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
 .btn-login-form,
 .btn-application-form {
   padding: 13px 24px;
@@ -294,6 +309,10 @@ a {
   top: 13px;
   left: 10px;
   color: #e1e1e1;
+}
+
+.login-icon:hover {
+  color: #32425c;
 }
 
 .site-navigation {
@@ -448,12 +467,28 @@ a {
 .shipping .product-link {
   margin: 0;
   padding: 10px 36px;
-  background-color: #e5ac40;
+  background-color: rgba(178, 135, 55, 0.3);
+}
+
+.shipping .product-link:hover {
+  background-color: rgba(178, 135, 55, 0.6);
+}
+
+.shipping .product-link:active {
+  background-color: rgba(178, 135, 55, 0.8);
 }
 
 .discount .product-link {
   margin: 0;
-  background-color: #80c180;
+  background-color: rgba(118, 168, 115, 0.3);
+}
+
+.discount .product-link:hover {
+  background-color: rgba(118, 168, 115, 0.6);
+}
+
+.discount .product-link:active {
+  background-color: rgba(118, 168, 115, 1);
 }
 
 .slider-container {
@@ -525,7 +560,8 @@ a {
 .top-btn-products,
 .top-btn,
 .about-us-btn,
-.contacts-btn {
+.contacts-btn,
+.send-form {
   display: inline-block;
   vertical-align: middle;
   padding: 10px 49px;
@@ -653,11 +689,85 @@ a {
 }
 
 .top-product-item {
+  position: relative;
   width: 219px;
   height: 315px;
   margin-right: 20px;
   text-align: center;
   border: 1px solid #eaeaea;
+}
+
+.top-product-item:hover {
+  box-shadow: 0 0 30px 1px #b1b5bd;
+}
+
+.actions {
+  display: none;
+  position: absolute;
+  padding-top: 47px;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 219px;
+  height: 135px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.buy,
+.bookmark {
+  position: relative;
+  display: block;
+  width: 129px;
+  margin: 0 auto;
+  margin-bottom: 7px;
+  padding: 7px 0;
+  border: 3px solid #63a63e;
+  border-bottom-color: #367315;
+  background-color: #63a63e;
+  color:white;
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "Cuprum", sans-serif;
+  line-height: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 3px;
+}
+
+.buy::before {
+  top: 8px;
+  left: 10px;
+}
+
+.buy:hover {
+  border: 3px solid #5fbb2d;
+  border-bottom-color: #367315;
+  background-color: #5fbb2d;
+  opacity: 1;
+}
+
+.buy:active {
+  border: 3px solid #518534;
+  background-color: #518534;
+}
+
+.bookmark {
+  background-color: #fff;
+  color: #32425c;
+}
+
+.bookmark:hover {
+  border: 3px solid #32425c;
+}
+
+.bookmark:active {
+  color: #c1c6ce;
+  border: 3px solid #c1c6ce;
+}
+
+.top-product-item:hover .actions {
+  display: block;
 }
 
 .top-product-item:last-child {
@@ -719,6 +829,19 @@ a {
   border-left-color: #ee3643;
 }
 
+.top-product-item:last-child::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 100;
+  top: 0px;
+  right: 0px;
+  height: 60px;
+  width: 60px;
+  background-image: url("../img/new-flag.png");
+  background-repeat: no-repeat;
+}
+
 .top-brands {
   display: flex;
   flex-wrap: wrap;
@@ -726,17 +849,39 @@ a {
   margin-bottom: 65px;
 }
 
-.logo-brand {
-  padding: 0 0;
+.brand-pic{
+  position: absolute;
   display: block;
-  text-align: center;
-
+  margin: auto;
+  top: 0;
+  left: 0;
 }
+
+.logo-brand {
+  position: absolute;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .logo-brand-wrap {
+  position: relative;
   margin-bottom: 20px;
   width: 220px;
   height: 141px;
   border: 1px solid #eaeaea;
+}
+
+.logo-brand-wrap:hover {
+  border: 1px solid #fff;
+  box-shadow: 0 0 30px 1px #b1b5bd;
+}
+
+.logo-brand-wrap:active {
+  opacity: 0.3;
+  border: 1px solid #fff;
+  box-shadow: 0 0 30px 1px #b1b5bd;
 }
 
 .services {
@@ -797,6 +942,15 @@ a {
   background-color: #32425c;
 }
 
+.services-list a:hover {
+  background-color: #293449;
+}
+
+.services-list a:active {
+  background-color: #fff;
+  color: #32425c;
+}
+
 .services-item {
   width: 830px;
   height: 312px;
@@ -809,7 +963,7 @@ a {
 }
 
 .item-shipping {
-  display: block;
+  display: none;
   background-image: url("../img/auto.png"), url("../img/shadow.png") ;
   background-position: 79% 33%, 65% 104%;
   background-repeat: no-repeat;
@@ -821,7 +975,8 @@ a {
   background-position: 80% 33%, 70% 141%;
   background-repeat: no-repeat;
 }
-.guarantee-show {
+
+.item-show {
   display: block;
 }
 
@@ -952,8 +1107,7 @@ a {
 }
 */
 .modal-form input {
-  max-width: 360px;
-  padding: 14px 13px;
+  padding: 14px 36px;
 }
 
 .modal-form .user-input:hover {
@@ -969,13 +1123,11 @@ a {
   display: inline-block;
   font-weight: bold;
   padding-bottom: 6px;
-  width: 360px;
 }
 
 .send-form {
+  padding: 10px 193px;
   border:none;
-  outline: none;
-  padding: 16px 84px;
 }
 
 .user-data {
@@ -987,21 +1139,8 @@ a {
 .user-wrap {
   display: flex;
   flex-direction: column;
+  margin-right: 21px;
 }
-
-/*
-.catalog-item .actions{
-  display: none;
-}
-
-.modal-window-cart {
-  display:none;
-}
-
-.catalog-item:hover .actions{
-  display: block;
-}
-*/
 
 .footer-logo {
   display: inline-block;
@@ -1105,7 +1244,7 @@ a {
 .footer-social-wrap {
   width: 940px;
   margin: 0 auto;
-  padding: 32px 0;
+  padding: 37px 0;
   display: flex;
   align-items: center;
   background-color: #293449;
@@ -1125,18 +1264,19 @@ a {
   color: #fff;
 }
 
+.feedback {
+  margin-right: 51px;
+}
+
 .footer-copyright {
-  margin-right: 10px;
-  padding: 0 0 0 0;
+  margin-right: 48px;
   line-height: 18px;
 }
 
-
-
 .social-btn-list {
   display: flex;
-  margin: 0;
-  padding: 0px 0px;
+  margin: 0px 121px;
+  padding: 0;
   list-style: none;
 }
 
@@ -1145,9 +1285,11 @@ a {
 }
 
 .footer-feedback {
-  margin-left: auto;
   display: flex;
 }
+
+.footer-feedback p {
+  line-height: 18px;}
 
 .footer-feedback span {
   display: block;
